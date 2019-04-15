@@ -757,6 +757,10 @@ En el marco APQC involucra “Retail & City Government”
 
 [https://github.com/alfa-omega-software/HCEU](https://github.com/alfa-omega-software/HCEU)
 
+## Diagrama arquitectura:
+
+![arquitectura.png](images/arquitectura.png "image_tooltip")
+
 ## Referencias:
 
 [http://www.saludcapital.gov.co](http://www.saludcapital.gov.co/)
