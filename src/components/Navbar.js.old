@@ -1,0 +1,80 @@
+import React, { Component } from 'react';
+import hceuicono from '../hceuicono.png';
+// data
+
+
+import { datadr } from '../datadr.json';
+console.log(datadr)
+class Navbar extends Component{
+  constructor(){
+    super();
+    this.state = {
+      datadr
+    }
+  }
+  genderdr(params) {
+    const data = params.toString();
+    console.log(data)
+          switch (data) {
+            case 'f':
+            return <h3>Dra</h3>;
+            case 'm':
+            return <h3>Dr</h3>;
+            default:
+            return <h3>Dr/Dra</h3>;
+
+    }
+  }
+
+
+    render(){
+
+      const datadr=this.state.datadr.map((datadr, i) => {
+
+        return(
+          <div className="card"> 
+          
+          <genderdr params={datadr.gender}/>
+          
+          {datadr.name}
+          <p> </p>
+          {datadr.identification}
+          </div>
+        )
+
+      }
+      )
+
+        return(
+        
+        <nav className="navbar navbar-dark bg-dark ">
+        <a className="navbar-brand" id="hceuiconotext" href="/"> 
+        <img src={hceuicono} width="48" height="48" id="hceuicono" className="d-inline-block align-top" alt={"Tenkuru icono"} />
+        HCEU</a>    
+        <div className="col-6"></div>
+        <ul className="navbar-nav bd-navbar-nav flex-row-reverse"> 
+        <li className="nav-item">
+          <a className="nav-link d-flex justify-content-end my-2 my-sm-0" href="/" >Inicio</a>
+        </li>
+        </ul>
+        <ul className="navbar-nav bd-navbar-nav flex-row-reverse"> <h1>{datadr}</h1>
+        </ul>   
+        
+        
+          
+      
+        
+        
+      
+            <form className="form-inline">
+          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          
+        </nav>
+       
+        
+        )
+    }
+}
+export default Navbar;
