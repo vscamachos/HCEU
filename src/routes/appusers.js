@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../models/users');
+const User = require('../models/user');
 
 
 router.get('/users', async (req,res)=>{
@@ -15,19 +15,19 @@ router.get('/users/:id',async (req, res)=>{
 });
 
 router.post('/users',async (req, res)=>{
-    const { name,description} = req.body;
-    const newLink = {
-        name,
+    const { title,description} = req.body;
+    const newUser = {
+        title,
         description,      
     };
-    const user = new User(newLink);
+    const user = new User(newUser);
     await user.save();
     res.json({status: 'User Saved'});
 });
 
 router.put('/users/:id',async (req, res)=>{
-    const { name, description } = req.body;
-    const newUser = { name, description };
+    const { title, description } = req.body;
+    const newUser = { title, description };
     await User.findByIdAndUpdate(req.params.id, newUser);
     res.json({status: 'User Updated'});
 });
