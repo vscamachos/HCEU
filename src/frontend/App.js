@@ -5,8 +5,8 @@ class App extends Component{
     constructor(){
         super();
         this.state = {
-            title: '',
-            description: '',
+            userName: '',
+            userDescription: '',
             tasks: [],
             _id: ''
         };
@@ -29,7 +29,7 @@ class App extends Component{
           .then(data => {
               console.log(data);
               M.toast({html:'User Updated'});
-              this.setState({title:'',description:'',_id:''});
+              this.setState({userName:'',userDescription:'',_id:''});
               this.fetchTask();
            });
        }else{
@@ -43,7 +43,7 @@ class App extends Component{
         }).then(res => res.json())
           .then(data => {
               M.toast({html:'User Saved'});
-              this.setState({title: '', description: ''});
+              this.setState({userName:'',userDescription:''});
               this.fetchTask();
           })
           .catch(err => console.error(err));
@@ -88,8 +88,8 @@ class App extends Component{
             .then(data=>{
               console.log(data)
               this.setState({
-                  title: data.title,
-                  description: data.description,
+                  userName: data.userName,
+                  userDescription: data.userDescription,
                   _id: data._id
               }); 
             });
@@ -120,12 +120,12 @@ class App extends Component{
                               <form onSubmit={this.addTask}>
                                   <div className="row">
                                     <div className="input-field col s12">
-                                      <input name="title" onChange={this.handleChange} type="text" placeholder="Task Title" value={this.state.title}></input>
+                                      <input name="userName" onChange={this.handleChange} type="text" placeholder="User" value={this.state.userName}></input>
                                     </div>
                                   </div>
                                   <div className="row">
                                     <div className="input-field col s12">
-                                      <textarea name="description" onChange={this.handleChange} placeholder="Task Description" value={this.state.description} className="materialize-textarea"></textarea>
+                                      <textarea name="userDescription" onChange={this.handleChange} placeholder="User Description" value={this.state.userDescription} className="materialize-textarea"></textarea>
                                     </div>
                                   </div>
                                   <button type="submit" onChange={this.handleChange} className="btn btn-success">SEND</button>
@@ -135,16 +135,16 @@ class App extends Component{
                         </div>
                         <div className="col s7s">
                           <table><thead><tr>
-                              <th>Title</th>
-                              <th>Description</th>
+                              <th>User</th>
+                              <th>User Description</th>
                           </tr></thead>
                           <tbody>
                             {
                               this.state.tasks.map(task =>{
                                 return(
                                   <tr key={task._id}>
-                                      <td>{task.title}</td>
-                                      <td>{task.description}</td>
+                                      <td>{task.userName}</td>
+                                      <td>{task.userDescription}</td>
                                       <td>
                                           <button type="button" className="btn btn-primary" onClick={()=>this.editTask(task._id)}>
                                               Edit

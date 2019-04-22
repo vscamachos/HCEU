@@ -15,10 +15,10 @@ router.get('/users/:id',async (req, res)=>{
 });
 
 router.post('/users',async (req, res)=>{
-    const { title,description} = req.body;
+    const { userName,userDescription} = req.body;
     const newUser = {
-        title,
-        description,      
+        userName,
+        userDescription,      
     };
     const user = new User(newUser);
     await user.save();
@@ -26,8 +26,8 @@ router.post('/users',async (req, res)=>{
 });
 
 router.put('/users/:id',async (req, res)=>{
-    const { title, description } = req.body;
-    const newUser = { title, description };
+    const { userName, userDescription } = req.body;
+    const newUser = { userName, userDescription };
     await User.findByIdAndUpdate(req.params.id, newUser);
     res.json({status: 'User Updated'});
 });
