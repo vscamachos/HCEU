@@ -742,7 +742,14 @@ _15/04/2019_
 
 _22/04/2019_
 
+## Marcel Julian Martinez Vanegas
+_10/04/2019_
 
+Gestion de riesgos.
+
+_22/04/2019_
+
+Manejo basico de Git.
 
 ***/**
 
