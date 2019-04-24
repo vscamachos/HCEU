@@ -727,6 +727,11 @@ Es un software de administración de proyectos, usa el sistema kanban, para el r
 ## Sección individual de aprendizaje
 
 **/***
+## Alex Jose Alberto Barreto Cajica
+_08/04/2019_
+_10/04/2019_
+_15/04/2019_
+_22/04/2019_
 
 ***/**
 
