@@ -5,16 +5,18 @@ const User = require('../models/user');
 const Record = require('../models/record');
 const Initial_evaluation = require('../models/initial_evaluation');
 
-
+//obteniendo la lista de la base
 router.get('/users', async (req,res)=>{
     const user = await User.find();
     res.json(user); 
 });
 
+//busca por id
 router.get('/users/:id',async (req, res)=>{
     const user = await User.findById(req.params.id);
     res.json(user);
 });
+
 
 router.get('/record/:id',async (req, res)=>{
     const record = await Record.findById(req.params.id);
@@ -26,16 +28,30 @@ router.get('/initial_evaluation/:id',async (req, res)=>{
     res.json(initial_evaluation);
 });
 
+//crea usuario
+
 router.post('/users',async (req, res)=>{
-    const { userName,userDescription} = req.body;
+    //los parametros que vamos a 'USAR' del request body
+        const { userName,userDocument,userDescription,      
+        userBirthday,userRol,userTelphone,userAdress,
+        userCountry,userEmail} = req.body;
+    //nuevo objeto con los parametros pedidos    
     const newUser = {
         userName,
+        userDocument,
         userDescription,      
+        userBirthday,
+        userRol,
+        userTelphone,
+        userAdress,
+        userCountry,
+        userEmail
     };
     const user = new User(newUser);
     await user.save();
     res.json({status: 'User Saved'});
 });
+
 
 router.post('/record',async (req, res)=>{
     const { id_Paciente,id_Medico} = req.body;
@@ -60,9 +76,24 @@ router.post('/initial_evaluation',async (req, res)=>{
 });
 
 
+
+//actualizar
+
 router.put('/users/:id',async (req, res)=>{
-    const { userName, userDescription } = req.body;
-    const newUser = { userName, userDescription };
+    const { userName,userDocument,userDescription,      
+        userBirthday,userRol,userTelphone,userAdress,
+        userCountry,userEmail} = req.body;
+    const newUser = {
+        userName,
+        userDocument,
+        userDescription,      
+        userBirthday,
+        userRol,
+        userTelphone,
+        userAdress,
+        userCountry,
+        userEmail
+    };
     await User.findByIdAndUpdate(req.params.id, newUser);
     res.json({status: 'User Updated'});
 });
