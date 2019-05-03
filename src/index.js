@@ -1,3 +1,4 @@
+// archivo para crear e inicializar servidor, de nodejs, de express
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
