@@ -7,6 +7,7 @@ const User = require('../models/user');
 
 router.get('/users', async (req,res)=>{
     const user = await User.find();
+    console.log(user);
     res.json(user);
 });
 

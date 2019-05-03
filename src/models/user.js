@@ -8,3 +8,4 @@ const UserSchema = new Schema({
 });
 
 module.exports = mongoose.model('User',UserSchema);
+// User es el nombre del esquema

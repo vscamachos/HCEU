@@ -7,13 +7,14 @@ const { mongoose } = require('./database');
 const app = express();
 
 //Settings
+// process.env.PORT le dice a la aplicacion que tome el puerto del SO.
 app.set('port', process.env.PORT || 3000);
 
 //Middleware
 app.use(morgan('dev'));
 app.use(express.json());
 
-//Routes
+//Routes, URL's que puede tener el servidor
 app.use(require('./routes/appusers'));
 
 //Static files
