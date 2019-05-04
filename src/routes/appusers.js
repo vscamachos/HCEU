@@ -19,12 +19,12 @@ router.get('/users/:id',async (req, res)=>{
 
 
 router.get('/record/:id',async (req, res)=>{
-    const record = await Record.findById(req.params.id);
+    const record = await Record.find({id_Paciente:req.params.id});
     res.json(record);
 });
 //tener en cuenta el ID (revisar)
 router.get('/initial_evaluation/:id',async (req, res)=>{
-    const initial_evaluation = await Initial_evaluation.findById(req.params.id);
+    const initial_evaluation = await Initial_evaluation.find({id_Paciente:req.params.id});
     res.json(initial_evaluation);
 });
 
@@ -101,7 +101,7 @@ router.put('/users/:id',async (req, res)=>{
 router.put('/record/:id',async (req, res)=>{
     const { id_Paciente,id_Medico } = req.body;
     const newRecord = { id_Paciente,id_Medico };
-    await React.findByIdAndUpdate(req.params.id, newRecord);
+    await Record.findByIdAndUpdate(req.params.id, newRecord);
     res.json({status: 'React Updated'});
 });
 
@@ -119,7 +119,7 @@ router.delete('/users/:id',async (req, res)=>{
 });
 
 router.delete('/record/:id',async (req, res)=>{
-    await record.findByIdAndRemove(req.params.id);
+    await Record.findByIdAndRemove(req.params.id);
     res.json({status: 'Record Removed'});
 });
 
