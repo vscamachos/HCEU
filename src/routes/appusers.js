@@ -1,3 +1,4 @@
+//definir operaciones a traves de las URL's
 const express = require('express');
 const router = express.Router();
 
@@ -6,7 +7,8 @@ const User = require('../models/user');
 
 router.get('/users', async (req,res)=>{
     const user = await User.find();
-    res.json(user); 
+    console.log(user);
+    res.json(user);
 });
 
 router.get('/users/:id',async (req, res)=>{
@@ -18,7 +20,7 @@ router.post('/users',async (req, res)=>{
     const { userName,userDescription} = req.body;
     const newUser = {
         userName,
-        userDescription,      
+        userDescription,
     };
     const user = new User(newUser);
     await user.save();

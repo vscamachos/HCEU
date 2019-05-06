@@ -12,7 +12,28 @@
 
 **Visión:** Para 2021, **Alpha-Omega Software** será una empresa bien posicionada en la industria del desarrollo de software a nivel nacional, experta en tecnologías de vanguardia y en la implementación de políticas de TIC del gobierno nacional.
 
-**Setup:** Este proyecto ha sido desarrollado en su totalidad con JavaScript, usando como Backend express, Frontend react.js y base de datos Mongodb, para su despliegue local es necesario tener instalado en el equipo, nodejs, mongodb, yarn y ejecutar desde la raiz del proyecto los comandos, yarn install, yarn run webpack y yarn run dev, teniendo en cuenta que previamente debe estar ejecutandose la base de datos mongodb en el puerto 27017.
+**Setup:** Este proyecto ha sido desarrollado en su totalidad con JavaScript, usando como Backend express, Frontend react.js y base de datos Mongodb,
+
+## Cómo empezar
+
+Primero, si decides usar la pagina oficial http://hceun.com/ o desplegar localmente.
+
+### Despliegue
+
+Tenga encuenta que necesita tener instalado correctamente node js, yarn y  teniendo en cuenta que previamente debe estar ejecutandose la base de datos mongodb en el puerto 27017(sudo service mongod start).
+
+Sigue los siguientes pasos:
+
+1. **Paso #1:** ejecute la siguiente linea en la terminal (dentro del proyecto)
+
+   `yarn`
+
+2. **Paso #2:** ejecute la siguiente linea en la terminal luego del primer paso
+
+      `yarn start`
+3. **Paso #3:** En su navegador preferido dirijase a la direccion http://localhost:3000/
+
+
 
 ## Equipo de Trabajo:
 
@@ -114,5 +135,3 @@
    </td>
   </tr>
 </table>
-
-
