@@ -1,8 +1,10 @@
+// modelos de la base de datos
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 //esquema usuario cn sus respectivos tipos de datos
 const UserSchema = new Schema({
+
     userName: { type: String,required: true},
     userDocument: {type: Number, required: true, unique: true}, 
     userDescription: { type: String,required:true},
@@ -15,3 +17,4 @@ const UserSchema = new Schema({
 });
 
 module.exports = mongoose.model('User',UserSchema);
+// User es el nombre del esquema

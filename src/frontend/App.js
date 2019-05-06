@@ -1,4 +1,6 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
+import Login from './components/login/index.js';
+import Navbar from './components/navbar/index.js';
 
 class App extends Component{
 
@@ -15,7 +17,7 @@ class App extends Component{
     }
 
     addTask(e){
-       
+
        if(this.state._id){
           fetch('/users/'+this.state._id, {
               method: 'PUT',
@@ -60,7 +62,7 @@ class App extends Component{
         .then(res => res.json())
         .then(data => {
             this.setState({tasks: data});
-            console.log(this.state.tasks);            
+            console.log(this.state.tasks);
         });
     }
 
@@ -91,9 +93,9 @@ class App extends Component{
                   userName: data.userName,
                   userDescription: data.userDescription,
                   _id: data._id
-              }); 
+              });
             });
-    } 
+    }
 
     handleChange(e){
         const { name, value } = e.target;
@@ -105,14 +107,14 @@ class App extends Component{
     render(){
         return (
             <div>
-                <nav className="navbar navbar-dark bg-dark">
-                    <div className="container">
-                        <a className="brand-logo" href="/">
-                            Historias Clínicas
-                        </a>
-                    </div>
-                </nav>
-                <div className="container">
+            <div className="">
+              <Navbar/>
+            </div>
+            <div className="container Bcolor2">
+              <Login/>
+            </div>
+
+                <div className="container Bcolor6">
                     <div className="row">
                         <div className="col s5">
                           <div className="card">
@@ -155,7 +157,7 @@ class App extends Component{
                                       </td>
                                   </tr>
                                 )
-                              }) 
+                              })
                             }
                           </tbody>
                           </table>

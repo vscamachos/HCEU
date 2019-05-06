@@ -1,3 +1,4 @@
+//definir operaciones a traves de las URL's
 const express = require('express');
 const router = express.Router();
 
@@ -8,7 +9,8 @@ const Initial_evaluation = require('../models/initial_evaluation');
 //obteniendo la lista de la base
 router.get('/users', async (req,res)=>{
     const user = await User.find();
-    res.json(user); 
+    console.log(user);
+    res.json(user);
 });
 
 //busca por id
@@ -129,3 +131,4 @@ router.delete('/initial_evaluation/:id',async (req, res)=>{
 });
 
 module.exports = router;
+
