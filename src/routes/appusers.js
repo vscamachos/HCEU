@@ -109,7 +109,10 @@ router.put('/record/:id',async (req, res)=>{
 
 router.put('/initial_evaluation/:id',async (req, res)=>{
     const {  id_Paciente,alergia_Medicamento } = req.body;
-    const newInitial_evaluation = { id_Paciente,id_Medico };
+    const newInitial_evaluation = { 
+        id_Paciente,
+        alergia_Medicamento 
+    };
     await Initial_evaluation.findByIdAndUpdate(req.params.id, newInitial_evaluation);
     res.json({status: 'Initial evaluation Updated'});
 });
