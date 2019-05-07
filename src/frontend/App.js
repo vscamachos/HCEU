@@ -8,6 +8,13 @@ class App extends Component{
         super();
         this.state = {
             userName: '',
+            userDocument: '',
+            userBirthday: '',
+            userRol: '',
+            userTelphone: '',
+            userAdress: '',
+            userCountry: '',
+            userEmail: '',
             userDescription: '',
             tasks: [],
             _id: ''
@@ -31,10 +38,19 @@ class App extends Component{
           .then(data => {
               console.log(data);
               M.toast({html:'User Updated'});
-              this.setState({userName:'',userDescription:'',_id:''});
+              this.setState({userName: '',
+              userDocument: '',
+              userBirthday: '',
+              userRol: '',
+              userTelphone: '',
+              userAdress: '',
+              userCountry: '',
+              userEmail: '',
+              userDescription: ''});
               this.fetchTask();
            });
        }else{
+         console.log(this.state);
         fetch('/users', {
             method: 'POST',
             body: JSON.stringify(this.state),
@@ -45,7 +61,15 @@ class App extends Component{
         }).then(res => res.json())
           .then(data => {
               M.toast({html:'User Saved'});
-              this.setState({userName:'',userDescription:''});
+              this.setState({userName: '',
+              userDocument: '',
+              userBirthday: '',
+              userRol: '',
+              userTelphone: '',
+              userAdress: '',
+              userCountry: '',
+              userEmail: '',
+              userDescription: ''});
               this.fetchTask();
           })
           .catch(err => console.error(err));
@@ -89,9 +113,15 @@ class App extends Component{
             .then(res=>res.json())
             .then(data=>{
               console.log(data)
-              this.setState({
-                  userName: data.userName,
-                  userDescription: data.userDescription,
+              this.setState({userName: data.userName,
+              userDocument: data.userDocument,
+              userBirthday: data.userBirthday,
+              userRol: data.userRol,
+              userTelphone: data.userTelphone,
+              userAdress: data.userAdress,
+              userCountry: data.userCountry,
+              userEmail: data.userEmail,
+              userDescription: data.userDescription,
                   _id: data._id
               });
             });
@@ -126,6 +156,41 @@ class App extends Component{
                                     </div>
                                   </div>
                                   <div className="row">
+                                    <div className="input-field col s12">
+                                      <input name="userDocument" onChange={this.handleChange} type="text" placeholder="User Document" value={this.state.userDocument}></input>
+                                    </div>
+                                  </div>
+                                  <div className="row">
+                                    <div className="input-field col s12">
+                                      <input name="userBirthday" onChange={this.handleChange} type="text" placeholder="User Birthday" value={this.state.userBirthday}></input>
+                                    </div>
+                                  </div> 
+                                  <div className="row">
+                                    <div className="input-field col s12">
+                                      <input name="userRol" onChange={this.handleChange} type="text" placeholder="User Rol" value={this.state.userRol}></input>
+                                    </div>
+                                  </div> 
+                                  <div className="row">
+                                    <div className="input-field col s12">
+                                      <input name="userTelphone" onChange={this.handleChange} type="text" placeholder="User Telphone" value={this.state.userTelphone}></input>
+                                    </div>
+                                  </div> 
+                                  <div className="row">
+                                    <div className="input-field col s12">
+                                      <input name="userAdress" onChange={this.handleChange} type="text" placeholder="User Adress" value={this.state.userAdress}></input>
+                                    </div>
+                                  </div> 
+                                  <div className="row">
+                                    <div className="input-field col s12">
+                                      <input name="userCountry" onChange={this.handleChange} type="text" placeholder="User Country" value={this.state.userCountry}></input>
+                                    </div>
+                                  </div> 
+                                  <div className="row">
+                                    <div className="input-field col s12">
+                                      <input name="userEmail" onChange={this.handleChange} type="text" placeholder="User Email" value={this.state.userEmail}></input>
+                                    </div>
+                                  </div>                                   
+                                  <div className="row">                                  
                                     <div className="input-field col s12">
                                       <textarea name="userDescription" onChange={this.handleChange} placeholder="User Description" value={this.state.userDescription} className="materialize-textarea"></textarea>
                                     </div>
