@@ -17,8 +17,11 @@ class InitialEvaluation extends Component{
                 <label for="">Evaluacion inicial del usuario con id:{this.state.id_Paciente}</label>
               </div>
               <div class="form-group">
-                <label for="MediAller">Medication Allergies</label>
-                <input type="text" class="form-control" id="MediAller"/>
+                <label for="MediAller" colorte>Medication Allergies</label>
+                <textarea class="form-control" rows="5" id="MediAller"></textarea>
+              </div>
+              <div className="form-group">
+                <button type="submit" className="btn btn-primary btn-block">send information</button>
               </div>
             </form>
         </div>

@@ -229,8 +229,10 @@ class App extends Component{
                           </div>
                       </div>
               </div>
-              <div className="container Bcolor4">
-                <InitialEvaluation/>
+              <div className="container Bcolor2">
+                <div className="row">
+                  <InitialEvaluation/>
+                </div>
               </div>
             </div>
         )
