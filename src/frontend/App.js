@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from './components/login/index.js';
 import Navbar from './components/navbar/index.js';
+import InitialEvaluation from './components/initialEvaluation/index.js';
 
 class App extends Component{
 
@@ -137,98 +138,102 @@ class App extends Component{
     render(){
         return (
             <div>
-            <div className="">
-              <Navbar/>
-            </div>
-            <div className="container Bcolor2">
-              <Login/>
-            </div>
-
-                <div className="container Bcolor6">
-                    <div className="row">
-                        <div className="col s5">
-                          <div className="card">
-                            <div className="card-body">
-                              <form onSubmit={this.addTask}>
-                                  <div className="row">
-                                    <div className="input-field col s12">
-                                      <input name="userName" onChange={this.handleChange} type="text" placeholder="User" value={this.state.userName}></input>
+              <div className="">
+                <Navbar/>
+              </div>
+              <div className="container Bcolor2">
+                <Login/>
+              </div>
+              <div className="container Bcolor6">
+                      <div className="row">
+                          <div className="col s5">
+                            <div className="card">
+                              <div className="card-body">
+                                <form onSubmit={this.addTask}>
+                                    <div className="row">
+                                      <div className="input-field col s12">
+                                        <input name="userName" onChange={this.handleChange} type="text" placeholder="User" value={this.state.userName}></input>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="row">
-                                    <div className="input-field col s12">
-                                      <input name="userDocument" onChange={this.handleChange} type="text" placeholder="User Document" value={this.state.userDocument}></input>
+                                    <div className="row">
+                                      <div className="input-field col s12">
+                                        <input name="userDocument" onChange={this.handleChange} type="text" placeholder="User Document" value={this.state.userDocument}></input>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div className="row">
-                                    <div className="input-field col s12">
-                                      <input name="userBirthday" onChange={this.handleChange} type="text" placeholder="User Birthday" value={this.state.userBirthday}></input>
+                                    <div className="row">
+                                      <div className="input-field col s12">
+                                        <input name="userBirthday" onChange={this.handleChange} type="text" placeholder="User Birthday" value={this.state.userBirthday}></input>
+                                      </div>
                                     </div>
-                                  </div> 
-                                  <div className="row">
-                                    <div className="input-field col s12">
-                                      <input name="userRol" onChange={this.handleChange} type="text" placeholder="User Rol" value={this.state.userRol}></input>
+                                    <div className="row">
+                                      <div className="input-field col s12">
+                                        <input name="userRol" onChange={this.handleChange} type="text" placeholder="User Rol" value={this.state.userRol}></input>
+                                      </div>
                                     </div>
-                                  </div> 
-                                  <div className="row">
-                                    <div className="input-field col s12">
-                                      <input name="userTelphone" onChange={this.handleChange} type="text" placeholder="User Telphone" value={this.state.userTelphone}></input>
+                                    <div className="row">
+                                      <div className="input-field col s12">
+                                        <input name="userTelphone" onChange={this.handleChange} type="text" placeholder="User Telphone" value={this.state.userTelphone}></input>
+                                      </div>
                                     </div>
-                                  </div> 
-                                  <div className="row">
-                                    <div className="input-field col s12">
-                                      <input name="userAdress" onChange={this.handleChange} type="text" placeholder="User Adress" value={this.state.userAdress}></input>
+                                    <div className="row">
+                                      <div className="input-field col s12">
+                                        <input name="userAdress" onChange={this.handleChange} type="text" placeholder="User Adress" value={this.state.userAdress}></input>
+                                      </div>
                                     </div>
-                                  </div> 
-                                  <div className="row">
-                                    <div className="input-field col s12">
-                                      <input name="userCountry" onChange={this.handleChange} type="text" placeholder="User Country" value={this.state.userCountry}></input>
+                                    <div className="row">
+                                      <div className="input-field col s12">
+                                        <input name="userCountry" onChange={this.handleChange} type="text" placeholder="User Country" value={this.state.userCountry}></input>
+                                      </div>
                                     </div>
-                                  </div> 
-                                  <div className="row">
-                                    <div className="input-field col s12">
-                                      <input name="userEmail" onChange={this.handleChange} type="text" placeholder="User Email" value={this.state.userEmail}></input>
+                                    <div className="row">
+                                      <div className="input-field col s12">
+                                        <input name="userEmail" onChange={this.handleChange} type="text" placeholder="User Email" value={this.state.userEmail}></input>
+                                      </div>
                                     </div>
-                                  </div>                                   
-                                  <div className="row">                                  
-                                    <div className="input-field col s12">
-                                      <textarea name="userDescription" onChange={this.handleChange} placeholder="User Description" value={this.state.userDescription} className="materialize-textarea"></textarea>
+                                    <div className="row">
+                                      <div className="input-field col s12">
+                                        <textarea name="userDescription" onChange={this.handleChange} placeholder="User Description" value={this.state.userDescription} className="materialize-textarea"></textarea>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <button type="submit" onChange={this.handleChange} className="btn btn-success">SEND</button>
-                              </form>
+                                    <button type="submit" onChange={this.handleChange} className="btn btn-success">SEND</button>
+                                </form>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="col s7s">
-                          <table><thead><tr>
-                              <th>User</th>
-                              <th>User Description</th>
-                          </tr></thead>
-                          <tbody>
-                            {
-                              this.state.tasks.map(task =>{
-                                return(
-                                  <tr key={task._id}>
-                                      <td>{task.userName}</td>
-                                      <td>{task.userDescription}</td>
-                                      <td>
-                                          <button type="button" className="btn btn-primary" onClick={()=>this.editTask(task._id)}>
-                                              Edit
-                                          </button>
-                                          <button type="button" className="btn btn-danger" onClick={()=>this.deleteTask(task._id)}>
-                                              Delete
-                                          </button>
-                                      </td>
-                                  </tr>
-                                )
-                              })
-                            }
-                          </tbody>
-                          </table>
-                        </div>
-                    </div>
+                          <div className="col s7s">
+                            <table><thead><tr>
+                                <th>User</th>
+                                <th>User Description</th>
+                            </tr></thead>
+                            <tbody>
+                              {
+                                this.state.tasks.map(task =>{
+                                  return(
+                                    <tr key={task._id}>
+                                        <td>{task.userName}</td>
+                                        <td>{task.userDescription}</td>
+                                        <td>
+                                            <button type="button" className="btn btn-primary" onClick={()=>this.editTask(task._id)}>
+                                                Edit
+                                            </button>
+                                            <button type="button" className="btn btn-danger" onClick={()=>this.deleteTask(task._id)}>
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                  )
+                                })
+                              }
+                            </tbody>
+                            </table>
+                          </div>
+                      </div>
+              </div>
+              <div className="container Bcolor2">
+                <div className="row">
+                  <InitialEvaluation/>
                 </div>
+              </div>
             </div>
         )
     }
