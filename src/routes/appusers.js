@@ -9,6 +9,7 @@ const Initial_evaluation = require('../models/initial_evaluation');
 //obteniendo la lista de la base
 router.get('/users', async (req,res)=>{
     const user = await User.find();
+    console.log(user);
     res.json(user);
 });
 
@@ -33,14 +34,14 @@ router.get('/initial_evaluation/:id',async (req, res)=>{
 
 router.post('/users',async (req, res)=>{
     //los parametros que vamos a 'USAR' del request body
-        const { userName,userDocument,userDescription,
+        const { userName,userDocument,userDescription,      
         userBirthday,userRol,userTelphone,userAdress,
         userCountry,userEmail} = req.body;
-    //nuevo objeto con los parametros pedidos
+    //nuevo objeto con los parametros pedidos    
     const newUser = {
         userName,
         userDocument,
-        userDescription,
+        userDescription,      
         userBirthday,
         userRol,
         userTelphone,
@@ -58,7 +59,7 @@ router.post('/record',async (req, res)=>{
     const { id_Paciente,id_Medico} = req.body;
     const newRecord = {
         id_Paciente,
-        id_Medico,
+        id_Medico,      
     };
     const record = new Record(newRecord);
     await record.save();
@@ -69,7 +70,7 @@ router.post('/initial_evaluation',async (req, res)=>{
     const { id_Paciente,alergia_Medicamento} = req.body;
     const newInitial_evaluation = {
         id_Paciente,
-        alergia_Medicamento,
+        alergia_Medicamento,      
     };
     const initial_evaluation = new Initial_evaluation(newInitial_evaluation);
     await initial_evaluation.save();
@@ -81,13 +82,13 @@ router.post('/initial_evaluation',async (req, res)=>{
 //actualizar
 
 router.put('/users/:id',async (req, res)=>{
-    const { userName,userDocument,userDescription,
+    const { userName,userDocument,userDescription,      
         userBirthday,userRol,userTelphone,userAdress,
         userCountry,userEmail} = req.body;
     const newUser = {
         userName,
         userDocument,
-        userDescription,
+        userDescription,      
         userBirthday,
         userRol,
         userTelphone,
@@ -108,9 +109,9 @@ router.put('/record/:id',async (req, res)=>{
 
 router.put('/initial_evaluation/:id',async (req, res)=>{
     const {  id_Paciente,alergia_Medicamento } = req.body;
-    const newInitial_evaluation = {
+    const newInitial_evaluation = { 
         id_Paciente,
-        alergia_Medicamento
+        alergia_Medicamento 
     };
     await Initial_evaluation.findByIdAndUpdate(req.params.id, newInitial_evaluation);
     res.json({status: 'Initial evaluation Updated'});
@@ -133,3 +134,4 @@ router.delete('/initial_evaluation/:id',async (req, res)=>{
 });
 
 module.exports = router;
+
