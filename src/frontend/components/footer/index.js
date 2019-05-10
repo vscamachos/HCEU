@@ -24,11 +24,11 @@ class Footer extends Component{
                </a>
         <p className="Color2">Historia Clínica Electrónica Unificada</p>
              </div>
-             <div class="col-md-3 mb-md-0 mb-3">
+             <div className="col-md-3 mb-md-0 mb-3">
 
 
-               <h5 class="text-uppercase Color2">Links</h5>
-               <ul class="list-unstyled">
+               <h5 className="text-uppercase Color2">Links</h5>
+               <ul className="list-unstyled">
                  <li>
                    <a href="#!">Link 1</a>
                  </li>
@@ -43,9 +43,9 @@ class Footer extends Component{
                  </li>
                </ul>
                </div>
-               <div class="col-md-3 mb-md-0 mb-3">
-       <h5 class="text-uppercase Color2">Links</h5>
-       <ul class="list-unstyled">
+               <div className="col-md-3 mb-md-0 mb-3">
+       <h5 className="text-uppercase Color2">Links</h5>
+       <ul className="list-unstyled">
          <li>
            <a href="#!">Link 1</a>
          </li>
@@ -61,7 +61,7 @@ class Footer extends Component{
        </ul>
      </div>
         </div>
-        <div class="footer-copyright text-center py-3 Color2">© 2019 Copyright:
+        <div className="footer-copyright text-center py-3 Color2">© 2019 Copyright:
     <a href="https://github.com/alfa-omega-software/"> alfa-oomega-software</a>
   </div>
 
