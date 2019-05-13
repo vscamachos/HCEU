@@ -1,0 +1,29 @@
+<svg width="357.16" height="168.92" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>.cls-1{fill:#0980dd;}.cls-2{fill:#fff;}.cls-3{font-size:101.76px;fill:#424242;font-family:Lato-Bold, Lato;font-weight:700;}.cls-4{letter-spacing:-0.01em;}.cls-5{fill:url(#linear-gradient);}.cls-6{fill:url(#linear-gradient-2);}.cls-7{fill:url(#linear-gradient-3);}.cls-8{fill:url(#linear-gradient-4);}</style>
+ </defs>
+ <title>LogoApp</title>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="Layer_2">
+   <g id="g4233">
+    <circle r="71" cy="97.92" cx="242.59" class="cls-1" id="path4218"/>
+    <path d="m191.459989,73.619999c0,7.84 0,15.69 0,23.53c0,13 7.61,23.52 23.52,23.52l23.53,0l0,-47.05l-7.8,0l0,24.4c0,8.25 -7,14.93 -15.73,14.93s-15.71,-6.67 -15.71,-14.93l0,-24.4l-7.81,0z" class="cls-2" id="rect4147"/>
+    <path d="m293.469989,120.669999c0,-7.84 0,-15.69 0,-23.52c0,-13 -7.61,-23.53 -23.52,-23.53c-7.75,0 -15.73,0 -23.53,0l0,47.05l7.8,0l0,-24.39c0,-8.25 7,-14.93 15.73,-14.93s15.72,6.68 15.72,14.93l0,24.4l7.8,-0.01z" class="cls-2" id="path4214"/>
+   </g>
+  </g>
+  <g id="Layer_6">
+   <circle id="svg_4" r="11.5" cy="11.5" cx="334.15" class="cls-5"/>
+   <circle id="svg_5" r="11.5" cy="36.42" cx="345.66" class="cls-6"/>
+   <circle id="svg_6" r="11.5" cy="47.92" cx="320.74" class="cls-7"/>
+   <circle id="svg_7" r="11.5" cy="23.01" cx="309.24" class="cls-8"/>
+   <rect id="svg_8" height="36.42" width="9.59" y="11.5" x="322.65" class="cls-2"/>
+   <rect id="svg_9" transform="rotate(90 556.8800048828126,-558.4600219726562) " height="36.42" width="9.59" y="-347.240022" x="1140.260005" class="cls-2"/>
+  </g>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="92" id="svg_11" y="120.897507" x="20.079987" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#ffffff">hce</text>
+ </g>
+</svg>
