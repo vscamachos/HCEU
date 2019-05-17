@@ -10,7 +10,12 @@ function App() {
       <div>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
-        <Route path="/Register" component={Register} />
+        <Route path="/register" component={Register} />
+        <Route path="/forgot-password" component={Forgotpassword} /> 
+        <Route path="/clinical-history" component={ClinicalHistory} /> 
+        <Route path="/faq" component={Faq} />
+        <Route path="/mainhelp" component={MainHelp} />
+        <Route path="/termsandconditions" component={TermsAndConditions} />      
       </div>
     </Router>
   );
