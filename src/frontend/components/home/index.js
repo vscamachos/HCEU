@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import Login from '../login/index.js';
+
 import Navbar from '../navbar/index.js';
 import Footer from '../footer/index.js';
+import Faq from '../faq/index.js';
+import TermsAndConditions from '../termsandconditions/index.js';
 class Home extends Component{
 
     render(){
@@ -9,8 +11,12 @@ class Home extends Component{
           
             <div>
               <Navbar/>
-              <Login/>
+              
               <hr/>
+              
+              <Faq/>
+              <hr/>
+              <TermsAndConditions/>
               <Footer/>
             </div>
           );
