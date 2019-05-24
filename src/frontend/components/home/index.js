@@ -6,7 +6,6 @@ import Register from '../register/index.js';
 import ClinicalHistory from '../clinical-history/index.js';
 import Faq from '../faq/index.js';
 import TermsAndConditions from '../termsandconditions/index.js';
-import Footer from '../footer/index.js';
 
 class Home extends Component{
 
@@ -24,7 +23,6 @@ class Home extends Component{
             <Faq/>
             <hr/>
             <TermsAndConditions/>
-            <Footer/>
           </div>
           );
     }
