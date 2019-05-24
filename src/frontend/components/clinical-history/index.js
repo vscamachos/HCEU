@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 // data
 
-class Register extends Component{
+class ClinicalHistory extends Component{
 
       constructor(){
           super();
@@ -226,4 +226,4 @@ class Register extends Component{
   }
   }
 
-export default Register;
+export default ClinicalHistory;
