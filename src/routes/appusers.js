@@ -18,14 +18,19 @@ router.get('/users/:id',async (req, res)=>{
     res.json(user);
 });
 
-
-router.get('/record/:id',async (req, res)=>{
-    const record = await Record.find({id_Paciente:req.params.id});
+router.get('/records',async (req, res)=>{
+    const record = await Record.find();
     res.json(record);
 });
+
+router.get('/initial_evaluations', async (req,res)=>{
+    const initial_evaluation = await Initial_evaluation.find();
+    res.json(initial_evaluation);
+});
+
 //tener en cuenta el ID (revisar)
-router.get('/initial_evaluation/:id',async (req, res)=>{
-    const initial_evaluation = await Initial_evaluation.find({id_Paciente:req.params.id});
+router.get('/initial_evaluations/:id',async (req, res)=>{
+    const initial_evaluation = await Initial_evaluation.find(req.params.id);
     res.json(initial_evaluation);
 });
 
@@ -54,7 +59,7 @@ router.post('/users',async (req, res)=>{
 });
 
 
-router.post('/record',async (req, res)=>{
+router.post('/records',async (req, res)=>{
     const { id_Paciente,id_Medico} = req.body;
     const newRecord = {
         id_Paciente,
@@ -65,7 +70,7 @@ router.post('/record',async (req, res)=>{
     res.json({status: 'Record Saved'});
 });
 
-router.post('/initial_evaluation',async (req, res)=>{
+router.post('/initial_evaluations',async (req, res)=>{
     const { id_Paciente,alergia_Medicamento} = req.body;
     const newInitial_evaluation = {
         id_Paciente,
@@ -99,15 +104,15 @@ router.put('/users/:id',async (req, res)=>{
     res.json({status: 'User Updated'});
 });
 
-router.put('/record/:id',async (req, res)=>{
+router.put('/records/:id',async (req, res)=>{
     const { id_Paciente,id_Medico } = req.body;
     const newRecord = { id_Paciente,id_Medico };
     await Record.findByIdAndUpdate(req.params.id, newRecord);
     res.json({status: 'React Updated'});
 });
 
-router.put('/initial_evaluation/:id',async (req, res)=>{
-    const {  id_Paciente,alergia_Medicamento } = req.body;
+router.put('/initial_evaluations/:id',async (req, res)=>{
+    const { id_Paciente,alergia_Medicamento } = req.body;
     const newInitial_evaluation = {
         id_Paciente,
         alergia_Medicamento
@@ -122,12 +127,12 @@ router.delete('/users/:id',async (req, res)=>{
     res.json({status: 'User Removed'});
 });
 
-router.delete('/record/:id',async (req, res)=>{
+router.delete('/records/:id',async (req, res)=>{
     await Record.findByIdAndRemove(req.params.id);
     res.json({status: 'Record Removed'});
 });
 
-router.delete('/initial_evaluation/:id',async (req, res)=>{
+router.delete('/initial_evaluations/:id',async (req, res)=>{
     await Initial_evaluation.findByIdAndRemove(req.params.id);
     res.json({status: 'Initial evaluation Removed'});
 });
