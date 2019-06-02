@@ -152,7 +152,7 @@ class App extends Component{
                               <form onSubmit={this.addTask}>
                                   <div className="row">
                                     <div className="input-field col s12">
-                                      <input name="userName" onChange={this.handleChange} type="text" placeholder="User" value={this.state.userName}></input>
+                                      <input name="userName" onChange={this.handleChange} type="text" placeholder="User Name" value={this.state.userName}></input>
                                     </div>
                                   </div>
                                   <div className="row">
@@ -167,17 +167,17 @@ class App extends Component{
                                   </div>
                                   <div className="row">
                                     <div className="input-field col s12">
-                                      <input name="userRol" onChange={this.handleChange} type="text" placeholder="User Rol" value={this.state.userRol}></input>
+                                      <input name="userRol" onChange={this.handleChange} type="text" placeholder="User Role" value={this.state.userRol}></input>
                                     </div>
                                   </div>
                                   <div className="row">
                                     <div className="input-field col s12">
-                                      <input name="userTelphone" onChange={this.handleChange} type="text" placeholder="User Telphone" value={this.state.userTelphone}></input>
+                                      <input name="userTelphone" onChange={this.handleChange} type="text" placeholder="User Telephone" value={this.state.userTelphone}></input>
                                     </div>
                                   </div>
                                   <div className="row">
                                     <div className="input-field col s12">
-                                      <input name="userAdress" onChange={this.handleChange} type="text" placeholder="User Adress" value={this.state.userAdress}></input>
+                                      <input name="userAdress" onChange={this.handleChange} type="text" placeholder="User Address" value={this.state.userAdress}></input>
                                     </div>
                                   </div>
                                   <div className="row">
@@ -195,7 +195,7 @@ class App extends Component{
                                       <textarea name="userDescription" onChange={this.handleChange} placeholder="User Description" value={this.state.userDescription} className="materialize-textarea"></textarea>
                                     </div>
                                   </div>
-                                  <button type="submit" onChange={this.handleChange} className="btn btn-success">SEND</button>
+                                  <button type="submit" onChange={this.handleChange} className="btn btn-success">Send</button>
                               </form>
                             </div>
                           </div>
@@ -228,8 +228,8 @@ class App extends Component{
                           </table>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>               
+            </div>            
         )
     }
 }

@@ -62,7 +62,7 @@ class Footer extends Component{
      </div>
         </div>
         <div className="footer-copyright text-center py-3 Color2">© 2019 Copyright:
-    <a href="https://github.com/alfa-omega-software/"> alfa-oomega-software</a>
+    <a href="https://github.com/alfa-omega-software/"> alfa-omega-software</a>
   </div>
 
         </nav>
