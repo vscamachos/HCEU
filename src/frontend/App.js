@@ -4,8 +4,7 @@ import AppNavbar from './components/navbar/index.js';
 import Form from './components/form/index.js';
 
 
-class App extends Component{
-    
+class App extends Component{    
 
     render(){
         return (
