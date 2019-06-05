@@ -13,7 +13,8 @@ const UserSchema = new Schema({
     userTelphone: {type: String, required: true},
     userAdress: {type: String, required: true},
     userCountry: {type: String, required: true},
-    userEmail: {type: String, required:true,unique:true}
+    userEmail: {type: String, required:true,unique:true},
+    userStatus:{type: Boolean, required:true, default:false}
 });
 
 module.exports = mongoose.model('User',UserSchema);

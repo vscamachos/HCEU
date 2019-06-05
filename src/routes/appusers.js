@@ -15,7 +15,7 @@ router.get('/users', async (req,res)=>{
 
 //busca por id
 router.get('/users/:id',async (req, res)=>{
-    const user = await User.findById(req.params.id);
+    const user = await User.find({userDocument:req.params.id});
     res.json(user);
 });
 
@@ -36,7 +36,7 @@ router.post('/users',async (req, res)=>{
     //los parametros que vamos a 'USAR' del request body
         const { userName,userDocument,userDescription,      
         userBirthday,userRol,userTelphone,userAdress,
-        userCountry,userEmail} = req.body;
+        userCountry,userEmail,userStatus} = req.body;
     //nuevo objeto con los parametros pedidos    
     const newUser = {
         userName,
@@ -47,7 +47,8 @@ router.post('/users',async (req, res)=>{
         userTelphone,
         userAdress,
         userCountry,
-        userEmail
+        userEmail,
+        userStatus
     };
     const user = new User(newUser);
     await user.save();
@@ -81,10 +82,10 @@ router.post('/initial_evaluation',async (req, res)=>{
 
 //actualizar
 
-router.put('/users/:id',async (req, res)=>{
+router.put('/users',async (req, res)=>{
     const { userName,userDocument,userDescription,      
         userBirthday,userRol,userTelphone,userAdress,
-        userCountry,userEmail} = req.body;
+        userCountry,userEmail,userStatus} = req.body;
     const newUser = {
         userName,
         userDocument,
@@ -94,15 +95,23 @@ router.put('/users/:id',async (req, res)=>{
         userTelphone,
         userAdress,
         userCountry,
-        userEmail
+        userEmail,
+        userStatus
     };
-    await User.findByIdAndUpdate(req.params.id, newUser);
+
+    var auxId = await User.find({userDocument:newUser['userDocument']});
+    auxId = auxId[0]['_id'];
+
+    await User.findByIdAndUpdate(auxId, newUser);
     res.json({status: 'User Updated'});
 });
 
 router.put('/record/:id',async (req, res)=>{
     const { id_Paciente,id_Medico } = req.body;
     const newRecord = { id_Paciente,id_Medico };
+    // var auxId = newRecord['userName'];
+    // await Record.findByIdAndUpdate(auxId, newRecord);
+    // Revisar bajo que indice se van a actualizar las historias
     await Record.findByIdAndUpdate(req.params.id, newRecord);
     res.json({status: 'React Updated'});
 });
