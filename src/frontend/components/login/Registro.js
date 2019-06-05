@@ -17,10 +17,10 @@ class Registro extends Component {
     }
 
 
-    onChange = e => {
+    onChange(e){
         this.setState({ [e.target.id]: e.target.value });
     };
-    onSubmit = e => {
+    onSubmit(e){
         e.preventDefault();
         const newUser = {
             userName: this.state.userName,
@@ -77,7 +77,7 @@ class Registro extends Component {
                                     id="userDescription"
                                     type="text"
                                 />
-                                <label htmlFor="userDescription">Descripción</label>
+                                <label htmlFor="userDescription">Descripciï¿½n</label>
                             </div>
                             <div className="input-field col s12">
                                 <input
@@ -104,7 +104,7 @@ class Registro extends Component {
                                     id="userTelphone"
                                     type="text"
                                 />
-                                <label htmlFor="userTelphone">Teléfono</label>
+                                <label htmlFor="userTelphone">Telï¿½fono</label>
                             </div>
                             <div className="input-field col s12">
                                 <input
@@ -113,7 +113,7 @@ class Registro extends Component {
                                     id="userAdress"
                                     type="text"
                                 />
-                                <label htmlFor="userAdress">Dirección</label>
+                                <label htmlFor="userAdress">Direcciï¿½n</label>
                             </div>
                             <div className="input-field col s12">
                                 <input
@@ -122,7 +122,7 @@ class Registro extends Component {
                                     id="userCountry"
                                     type="text"
                                 />
-                                <label htmlFor="uuserCountry">País</label>
+                                <label htmlFor="uuserCountry">Paï¿½s</label>
                             </div>
                             <div className="input-field col s12">
                                 <input
