@@ -9,16 +9,16 @@ class App extends Component{
     render(){
         return (
             <div>
-              <div className="">
-                //<AppNavbar/>
+              <div>
+                <AppNavbar/>
               </div>
 
               <div className="container Bcolor2">
-                //<Login/>
+                <Login/>
               </div>
 
               <div>
-                //<Form/>
+                <Form/>
               </div>
             </div>
         )

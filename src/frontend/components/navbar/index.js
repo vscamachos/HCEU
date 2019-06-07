@@ -20,15 +20,10 @@ class AppNavbar extends Component{
     }
   }
 
-
-
     render(){
-
-
-
         return(
 
-          <Navbar bg="light" expand =  "lg" fixed = "top">
+          <Navbar bg="light" expand =  "lg">
             <Navbar.Brand href="#home">
                 <img src={hceuicono} height="35px" id="hceuicono" className="d-inline-block align-top" alt={"Tenkuru icono"} />
               {' Historias clínicas electrónicas uníficadas'}
@@ -43,11 +38,6 @@ class AppNavbar extends Component{
           </Form>
 
           </Navbar>
-
-
-
-
-
         )
     }
 }
