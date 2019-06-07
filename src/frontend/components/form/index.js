@@ -198,7 +198,7 @@ class Form extends Component{
                           </div>
                         </div>
                         
-                        <div className="col s7s">
+                        <div className="col s7s light">
                           <table><thead><tr>
                               <th>User</th>
                               <th>User Description</th>

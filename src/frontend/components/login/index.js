@@ -71,7 +71,7 @@ function SignIn(props) {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button
+          <Button onClick = {props.handleLogin} //provisional
             type="submit"
             fullWidth
             variant="contained"
