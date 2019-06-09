@@ -18,7 +18,7 @@ export default ({styles,handleClick,handleSubmit,handleChange,args,errors}) => {
           <Form.Field>
 
           <Form.Input name="userName" onChange={handleChange} placeholder='Nombre de Usuario' icon={!errors.length?null:_find(errors, {path:'userName'})? <Icon name="remove circle" color="red" size="large"/>:<Icon name="check circle" color="green" size="large"/>}/>            
-=======
+
 
           </Form.Field>
           <Form.Field>

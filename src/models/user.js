@@ -7,11 +7,11 @@ const validations = [
       arguments: [5, 10],
       message: 'Name should be between {ARGS[0]} and {ARGS[1]} characters',
     }),
-    validate({
+    /*validate({
       validator: 'isAlphanumeric',
       passIfEmpty: false,
       message: 'Name should contain alpha-numeric characters only',
-    }),
+    }),*/
   ]
 const UserSchema = new Schema({
 

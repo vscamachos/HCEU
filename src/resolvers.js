@@ -18,12 +18,8 @@ const formatErrors = (error,otherErrors) => {
   }
   const unknownError = {}
   switch(error.code){
-    case 11000:
-       unknownError.path = "userName"
-       unknownError.message = "El nombre del usuario ya existe"   
-      break;
     default: 
-       unknownError.path = "Desconocido"
+       unknownError.path = "Error"
        unknownError.message = error.message       
   }
   return [unknownError]
@@ -57,8 +53,10 @@ export const resolvers = {
           const user = new User(newUser);
           if (otherErrors.length>0){
             throw otherErrors;
-          }                 
-          await user.save(); 
+          }
+          //console.log(user);
+          await user.save();
+          console.log("despues de save",otherErrors.length); 
           return {
             success: true,
             errors: []
