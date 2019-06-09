@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import hceuicono from './LogoApp.svg';
+import aoicono from './LogoApp.svg';
 import './index.css';
 // data
 //import { datadr } from '../datadr.json';
@@ -16,13 +16,12 @@ class Footer extends Component{
     render(){
         return(
 
-        <nav className="footer Bcolor3">
+        <nav className="footer Color2">
           <div className="container-fluid text-center row text-md-left">
              <div className="col-md-6 mt-md-0 mt-3">
                <a className="row" id="titledoctor" href="/">
-                  <img src={hceuicono} width="150px" id="hceuicono" className="d-inline-block align-top" alt={"HCEUN icono"} />
+                  <img src={aoicono} width="150px" id="aoicono" className="d-inline-block align-top" alt={"HCEUN icono"} />
                </a>
-        <p className="Color2">Historia Clínica Electrónica Unificada</p>
              </div>
              <div className="col-md-3 mb-md-0 mb-3">
 
@@ -32,31 +31,13 @@ class Footer extends Component{
                  <li>
                    <a href="#!">Link 1</a>
                  </li>
-                 <li>
-                   <a href="#!">Link 2</a>
-                 </li>
-                 <li>
-                   <a href="#!">Link 3</a>
-                 </li>
-                 <li>
-                   <a href="#!">Link 4</a>
-                 </li>
-               </ul>
+                 </ul>
                </div>
                <div className="col-md-3 mb-md-0 mb-3">
        <h5 className="text-uppercase Color2">Links</h5>
        <ul className="list-unstyled">
          <li>
            <a href="#!">Link 1</a>
-         </li>
-         <li>
-           <a href="#!">Link 2</a>
-         </li>
-         <li>
-           <a href="#!">Link 3</a>
-         </li>
-         <li>
-           <a href="#!">Link 4</a>
          </li>
        </ul>
      </div>
