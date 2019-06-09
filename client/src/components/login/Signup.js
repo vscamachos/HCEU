@@ -2,6 +2,7 @@ import React from 'react';
 import { Divider, Button, Icon, Form, Message } from 'semantic-ui-react';
 import _find from 'lodash/find';
 
+
 export default ({styles,handleClick,handleSubmit,handleChange,args,errors}) => {
      
      return(
@@ -15,7 +16,10 @@ export default ({styles,handleClick,handleSubmit,handleChange,args,errors}) => {
           </Button>
           <Divider horizontal>o</Divider>
           <Form.Field>
+
           <Form.Input name="userName" onChange={handleChange} placeholder='Nombre de Usuario' icon={!errors.length?null:_find(errors, {path:'userName'})? <Icon name="remove circle" color="red" size="large"/>:<Icon name="check circle" color="green" size="large"/>}/>            
+=======
+
           </Form.Field>
           <Form.Field>
           <Form.Input name="userDocument" onChange={handleChange} placeholder='Documento de Identidad' icon={!errors.length?null:_find(errors, {path:'userDocument'})? <Icon name="remove circle" color="red" size="large"/>:<Icon name="check circle" color="green" size="large"/>}/>
@@ -41,6 +45,7 @@ export default ({styles,handleClick,handleSubmit,handleChange,args,errors}) => {
           <Form.Field>
           <Form.Input name="password" onChange={handleChange} type="password" placeholder='Contraseña' icon={!errors.length?null:_find(errors, {path:'password'})? <Icon name="remove circle" color="red" size="large"/>:<Icon name="check circle" color="green" size="large"/>}/>
           </Form.Field>
+
           <Button type='submit' 
                   disabled={!args.userName || !args.userDocument || !args.userBirthday || !args.userRol || !args.userTelphone || !args.userAdress || !args.userCountry || !args.userEmail || !args.password} 
                   primary fluid>
@@ -53,7 +58,7 @@ export default ({styles,handleClick,handleSubmit,handleChange,args,errors}) => {
           </Form> 
         </div>
         <div style={styles.box}>
-          ¿Ya tienes una cuenta? <a href="" onClick={handleClick}>Inicia Sesión</a>
+          ¿Ya tienes una cuenta? <a href="/home" onClick={handleClick}>Inicia Sesión</a>
         </div>
        </div>
     )

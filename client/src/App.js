@@ -12,8 +12,9 @@ import Login from './components/login';
 import InitialEvaluation from './components/initialEvaluation';
 import Faq from './components/faq/index';
 
+
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql', 
+  uri: 'http://localhost:4000/graphql',
   cache: new InMemoryCache()
 });
 

@@ -69,15 +69,12 @@ class Login extends React.Component{
           <Grid verticalAlign='middle'columns={2} centered style={styles.grid}>
              <Grid.Row>
                <Grid.Column>
-                 <img src="agregarimagen.jpg" alt="HCEU"/>
-               </Grid.Column>
-               <Grid.Column>
                  {showLogin && <Signin styles={styles} handleClick={this.showRegister} handleSubmit={this.handleLogin}/>}
                  {showRegister && <Signup styles={styles} handleClick={this.showLogin} handleSubmit={this.handleRegister} handleChange={this.handleChange} args={argsSignup} errors={errorsSignup}/>}
                  {/*showLostPassword && <LostPassword styles={styles}/>*/}
                </Grid.Column>
              </Grid.Row>
-          </Grid> 
+          </Grid>
         )
     }
 }
