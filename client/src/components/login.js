@@ -64,7 +64,7 @@ class Login extends React.Component{
                  {/*showLostPassword && <LostPassword styles={styles}/>*/}
                </Grid.Column>
              </Grid.Row>
-          </Grid> 
+          </Grid>
         )
     }
 }

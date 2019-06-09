@@ -2,10 +2,10 @@ import React from 'react';
 import { Divider, Button, Icon, Form } from 'semantic-ui-react';
 
 export default ({styles,handleClick,handleSubmit}) => {
-   const args={      
+   const args={
     }
    const handleChange = (ev, input)=>{
-     args[input.name] = input.value        
+     args[input.name] = input.value
 }
 
      return(
@@ -19,7 +19,7 @@ export default ({styles,handleClick,handleSubmit}) => {
           </Button>
           <Divider horizontal>o</Divider>
           <Form.Field>
-          <Form.Input name="userName" onChange={handleChange} placeholder='Nombre de Usuario' />            
+          <Form.Input name="userName" onChange={handleChange} placeholder='Nombre de Usuario' />
           </Form.Field>
           <Form.Field>
           <Form.Input name="userDocument" onChange={handleChange} placeholder='Documento de Identidad' />
@@ -46,10 +46,10 @@ export default ({styles,handleClick,handleSubmit}) => {
           <Form.Input name="password" onChange={handleChange} type="password" placeholder='Contraseña' />
           </Form.Field>
           <Button type='submit' primary fluid>Registrarte</Button>
-          </Form> 
+          </Form>
         </div>
         <div style={styles.box}>
-          ¿Ya tienes una cuenta? <a href="" onClick={handleClick}>Inicia Sesión</a>
+          ¿Ya tienes una cuenta? <a href="/home" onClick={handleClick}>Inicia Sesión</a>
         </div>
        </div>
     )

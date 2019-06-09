@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+
 // data
 
 
@@ -27,7 +28,7 @@ class AppNavbar extends Component{
 
 
         return(
-
+<Container>
           <Navbar bg="light" expand =  "lg" fixed = "top">
             <Navbar.Brand href="#home">
                 <img src={hceuicono} height="35px" id="hceuicono" className="d-inline-block align-top" alt={"Tenkuru icono"} />
@@ -43,7 +44,7 @@ class AppNavbar extends Component{
           </Form>
 
           </Navbar>
-
+</Container>
 
 
 
