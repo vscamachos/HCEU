@@ -2,6 +2,11 @@ import { makeExecutableSchema } from "graphql-tools";
 import { resolvers } from "./resolvers";
 
 const typeDefs = `
+
+type Error {
+    path: String!,
+    message: String!
+}
 type User {
     _id: ID
     userName: String!
@@ -29,8 +34,12 @@ type Initial_evaluation {
         Records: [Record]
         Initial_evaluations: [Initial_evaluation]
     }
+    type Response {
+        success: Boolean!
+        errors: [Error]
+    }
     type Mutation {
-        createUser(input: UserInput): Boolean!
+        createUser(input: UserInput): Response!
         deleteUser(_id: ID): User
         updateUser(_id: ID, input: UserInput): User
         createRecord(input: RecordInput): Record

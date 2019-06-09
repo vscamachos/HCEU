@@ -3,6 +3,33 @@ import Record from "./models/record";
 import Initial_evaluation from "./models/initial_evaluation";
 import bcrypt from "bcrypt";
 
+const formatErrors = (error,otherErrors) => {
+  const errors = error.errors;
+  let objErrors = [];
+  if(errors){    
+    Object.entries(errors).map(error=>{
+      const {path, message} = error[1];
+      objErrors.push({path,message});
+    })
+    objErrors.concat(otherErrors);
+    return objErrors;
+  }else if(otherErrors.length){
+    return otherErrors;
+  }
+  const unknownError = {}
+  switch(error.code){
+    case 11000:
+       unknownError.path = "userName"
+       unknownError.message = "El nombre del usuario ya existe"   
+      break;
+    default: 
+       unknownError.path = "Desconocido"
+       unknownError.message = error.message       
+  }
+  return [unknownError]
+  
+}
+
 export const resolvers = {
    Query: {    
      async Users() {
@@ -17,18 +44,30 @@ export const resolvers = {
    },
    Mutation: {
      async createUser(_, { input }){
+      const otherErrors = [];
       try{
+          if (input.password.length<8){
+            otherErrors.push({path: 'input.password',message: 'Contraseña debe ser mayor a 8 caracteres'});
+          }          
           const hashPassword = await bcrypt.hash(input.password, 10)
           const { userName, userDocument, userBirthday, userRol, userTelphone, userAdress, userCountry, userEmail} = input;
           const newUser = {
             userName, userDocument, userBirthday, userRol, userTelphone, userAdress, userCountry, userEmail, password:hashPassword
           }          
           const user = new User(newUser);
-          await user.save();        
-          return true;
+          if (otherErrors.length>0){
+            throw otherErrors;
+          }                 
+          await user.save(); 
+          return {
+            success: true,
+            errors: []
+          }
       }catch(error){
-          console.log(error);
-           return false;
+        return {
+            success: false,
+            errors: formatErrors(error,otherErrors)
+          }
       }
     },      
      async  deleteUser(_, {_id}){

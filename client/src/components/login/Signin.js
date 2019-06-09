@@ -30,7 +30,7 @@ export default ({styles, handleClick, handleSubmit}) => {
           ¿No tienes una cuenta? <a href="" onClick={handleClick}>Regístrate</a>
         </div>
         <div style={styles.box}>
-         <a href="/faq"><Button type='submit' sucess>Ir a Faq</Button></a>
+         <a href="/faq"><Button type='submit' primary>Ir a Faq</Button></a>
         </div>
        </div>
     )

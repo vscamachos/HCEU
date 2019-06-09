@@ -17,7 +17,13 @@ export default {
              userCountry: $userCountry
              userEmail: $userEmail
              password: $password
-           })
+           }){
+             success
+             errors{
+               path
+               message
+             }
+           }
          }
        `
     },
