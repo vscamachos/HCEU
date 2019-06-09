@@ -1,9 +1,8 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+import { Schema, model } from "mongoose";
 
 const Initial_evaluationSchema = new Schema({
     id_Paciente: { type: String,required:true},
     alergia_Medicamento: { type: String,required:true}
 });
 
-module.exports = mongoose.model('Initial_evaluation',Initial_evaluationSchema);
+export default model('Initial_evaluation',Initial_evaluationSchema);

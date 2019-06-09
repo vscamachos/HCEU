@@ -1,9 +1,14 @@
-// para conectar a base de datos
-const mongoose = require('mongoose');
-const { database } = require('./keys');
+import mongoose from "mongoose";
 
-mongoose.connect(database.URI, {useNewUrlParser: true})
-   .then(db => console.log('DB is connected'))
-   .catch(err => console.error(err));
-
-module.exports = mongoose
+export async function connect(){
+    try{
+    await mongoose.connect('mongodb://localhost/HCEU', {
+        useNewUrlParser: true
+    })
+    console.log('>>> DB is connected');
+    }catch(e){
+        console.log('Something goes wrong!');
+        console.log(e);
+    }
+    
+}

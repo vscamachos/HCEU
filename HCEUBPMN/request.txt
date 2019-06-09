@@ -1,0 +1,38 @@
+curl --location --request POST "http://localhost:8080/engine-rest/process-definition/key/consultaHC/start" \
+  --header "Content-Type: application/json" \
+  --data "{
+	\"variables\": {
+		\"estaPaciente\": {
+			\"value\":false,
+			\"type\":\"boolean\"
+		},
+		\"estaUsuario\": {
+			\"value\":true,
+			\"type\":\"boolean\"
+		},
+		\"crearUsuario\": {
+			\"value\":true,
+			\"type\":\"boolean\"
+		},
+		\"rolUsuario\":{
+			\"value\":\"paciente\",
+			\"type\": \"String\"
+		}
+	}
+}"
+
+
+curl --location --request POST "http://localhost:8080/engine-rest/process-definition/key/Registro/start" \
+  --header "Content-Type: application/json" \
+  --data "{
+	\"variables\": {
+		\"esta\": {
+			\"value\":true,
+			\"type\":\"boolean\"
+		},
+		\"crear\": {
+			\"value\":true,
+			\"type\":\"boolean\"
+		}
+	}
+}"

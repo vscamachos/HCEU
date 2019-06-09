@@ -1,26 +1,26 @@
-// archivo para crear e inicializar servidor, de nodejs, de express
-const express = require('express');
-const morgan = require('morgan');
-const path = require('path');
-const { mongoose } = require('./database');
+import express from "express";
+import graphqlHTTP from "express-graphql";
+import cors from 'cors';
+import schema from "./schema";
+import { connect } from "./database";
 
 const app = express();
 
-//Settings
-// process.env.PORT le dice a la aplicacion que tome el puerto del SO.
-app.set('port', process.env.PORT || 3000);
+app.use(cors({
+    origin:["http://localhost:3000"]
+}));
+connect();
 
-//Middleware
-app.use(morgan('dev'));
-app.use(express.json());
-
-//Routes, URL's que puede tener el servidor
-app.use(require('./routes/appusers'));
-
-//Static files
-app.use(express.static(path.join(__dirname, 'public')));
-
-//Starting server
-app.listen(app.get('port'), ()=>{
-    console.log(`Server on port ${app.get('port')}`);
+app.get('/', (req,res)=>{
+    res.json({
+        message: 'Hello'
+    });
 });
+
+app.use('/graphql', graphqlHTTP({
+    graphiql: true,
+    schema: schema,   
+}));
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, ()=>console.log(`Server on port ${PORT}`));
