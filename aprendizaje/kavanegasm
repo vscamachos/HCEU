@@ -1,9 +1,0 @@
-## Aprendizaje Kevin Alejandro Vanegas
-
-**Iteración 1:** Actualmente estoy aprendiendo sobre la metodología ágil para proceder como scrum master del equipo (Alfa Omega Software) en el proyecto HCEUN. He trabajado con node js, pero Actualmente siempre manejaba npm como gestor de paquetes, probe yarn como alternativa a este y me gusto mucho, permitiéndome ahorrar tiempo al ejecutar cualquier comando a comparación de npm
-
-**Iteración 2:** Utilizaba una herramienta de código libre para análisis basado en el lenguaje "R", pero por facilidad intente la herramienta de Microsoft llamada "Power Bi", el cual me dejo satisfecho con la facilidad de sincronizar el repositorio del proyecto HCEUN directamente a la herramienta (cosa que la otra herramienta tocaba siempre de forma manual y poco intuitiva), en la sección retrospective de cada Iteración se puede apreciar.
-
-**Iteración 3:** Mediante concurrently instalado vía yarn, fue posible ejecutar el proyecto mediante "yarn star", antes se necesitaba ejecutar 2 consolas al tiempo, de esta forma facilitar el trabajo del equipo.
-
-**Iteración 4:** Aprendizaje sobre react routes, implementacion en el proyecto. Algunos componenetes de material ui. ley 945 de la republica.
